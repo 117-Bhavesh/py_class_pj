@@ -1,24 +1,21 @@
 def main():
-    # Create a list with a fixed size for storing food items
-    foods = [""] * 5  # Placeholder list with a size of 5
+    foods = []  # Initialize an empty list for storing food items
 
-    size = len(foods)
-    
-    for i in range(size):
-        temp = input(f"Enter a food you like or 'q' to quit #{i + 1}: ")
-        
+    while True:
+        # Prompt the user for input
+        temp = input(f"Enter a food you like or 'q' to quit #{len(foods) + 1}: ")
+
         # Check for the quit condition
         if temp.lower() == "q":
             break
         else:
-            foods[i] = temp  # Assign the input to the list
+            foods.append(temp)  # Dynamically add the input to the list
 
     print("You like the following food:")
 
-    # Iterate and print only non-empty elements of the list
+    # Print all elements in the list
     for food in foods:
-        if food:  # Skip empty strings
-            print(food)
+        print(food)
 
 if __name__ == "__main__":
     main()
